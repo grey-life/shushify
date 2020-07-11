@@ -21,7 +21,7 @@ const adCheck = (tab) => {
     chrome.storage.sync.get('extStatus', function (data) {
         if (data.extStatus) {
             if (tab.url.includes('open.spotify.com')) {
-                if (tab.title.includes('Spotify · Spotify') || tab.title.includes('Advertisement · Spotify')) {
+                if (tab.title.includes('Spotify · Spotify') || tab.title.includes('Advertisement')) {
                     chrome.tabs.update(tab.id, { "muted": true });
                 } else {
                     chrome.tabs.update(tab.id, { "muted": false });
